@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsa Esmati</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent: #4a9eff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--accent);
+        }
+
+        /* Social Icons */
+        .social-container {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin: 0.1rem 0;     /* Reduced from 1rem */
+        padding: 0.1rem;      /* Reduced from 1rem */
+        border-radius: 10px;
+    }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Adjust container to account for fixed navbar */
+        .content {
+            margin-top: 80px;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .intro-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .profile-image {
+            width: 260px;
+            height: 320px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* News Section */
+        .news {
+            margin-top: 1 rem;
+        }
+
+        .news-card {
+            background-color: var(--bg-secondary);
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-content {
+            color: var(--text-secondary);
+        }
+
+        /* Publications Section */
+        .publications {
+            margin-top: 3rem;
+        }
+
+        .publication-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-secondary);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .publication-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .publication-link:hover {
+            color: inherit;
+        }
+
+        .publication-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .publication-image {
+            width: 250px;
+            height: 160px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .publication-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .publication-authors {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-abstract {
+            color: var(--text-secondary);
+        }
+
+        /* Email Contact */
+        .email-container {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .email-text {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .email-address {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .email-address:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+
+            .social-container {
+                gap: 2rem;
+                padding: 1.5rem;
+            }
+
+            .content {
+                margin-top: 120px;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .intro-text {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+
+            .publication-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .publication-content {
+                padding-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#news" class="nav-button">News</a>
+        <a href="#publications" class="nav-button">Publications</a>
+    </nav>
+
+    <div class="container content">
+        <!-- Header Section with Introduction -->
+        <section class="header">
+            <div class="intro-text">
+                <h1>Parsa Esmati</h1>
+                <p>Researcher</p>
+                <p>Hi, I'm Parsa, a researcher interested in generative models and their scientific applications. My interests are specifically the spatio-temporal generative models for video and PDE simulations. This includes structured or unstructured spaces such as irregular meshes. I also have a computational background, particularly in solving physical simulations such as Navier-Stokes. For collaborations, especially on spatio-temporal generative models, please email me.</p>
+            </div>
+            <img src="metadata/profile.jpeg" alt="Profile Picture" class="profile-image">
+        </section>
+
+        <!-- Social Links Section -->
+        <div class="social-container">
+            <a href="https://github.com/ParsaEsmati" target="_blank">
+                <svg class="social-icon" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=hPrm0ccAAAAJ&hl=en" target="_blank">
+                <svg class="social-icon" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                </svg>
+            </a>
+            <a href="metadata/CV-parsaesmati.pdf" target="_blank">
+                <svg class="social-icon" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8v-2zm0-4h8v2H8v-2z"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- News Section -->
+        <section id="news" class="news">
+            <h2>News</h2>
+            
+            <div class="news-card">
+                <p class="news-date">October 2024</p>
+                <p class="news-content">Accepted paper at NeurIPS 2024, reducing the temporal rollout error for long sequence generation of PDEs</p>
+            </div>
+
+            <div class="news-card">
+                <p class="news-date">October 2024</p>
+                <p class="news-content">Our project on source free domain adaptation on video action recognition was submitted to CVPR 2025</p>
+            </div>
+
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="publications">
+            <h2>Publications</h2>
+            
+            <!-- First publication -->
+            <a href="https://arxiv.org/abs/2410.15495" target="_blank" class="publication-link">
+                <div class="publication-card">
+                    <div class="publication-content">
+                        <h3 class="publication-title">SEA: State-Exchange Attention for High-Fidelity Physics-Based Transformers (NeurIPS 2024)</h3>
+                        <p class="publication-authors">Parsa Esmati, Amirhossein Dadashzadeh, Nicolas Larrosa, Nicolo Grilli</p>
+                        <p class="publication-abstract">Current approaches using sequential networks have shown promise in estimating field variables for dynamical systems. Here we address the rollout error for long sequence generation of PDEs, using a novel state-exchange attention mechanism, which allows the information exchange amongst field variables.</p>
+                    </div>
+                    <img src="metadata/sea.png" alt="SEA-Image" class="publication-image">
+                </div>
+            </a>
+        
+            <!-- Second publication -->
+            <a href="https://www.sciencedirect.com/science/article/pii/S0017931024002801" target="_blank" class="publication-link">
+                <div class="publication-card">
+                    <div class="publication-content">
+                        <h3 class="publication-title">Simulating chemical mixing and molten pool shape in dissimilar welds using thermal fluid dynamics (IJHMT 2024)</h3>
+                        <p class="publication-authors">Parsa Esmati, Thomas Flint, Fatma Akyel, Simon Olschok, Uwe Reisgen, Philip Cardiff, Nicolas Larrosa, Nicolo Grilli</p>
+                        <p class="publication-abstract">Modelling multiphase flow using thermal fluid dynamics and how different factors such as diffusion, and Marangoni effect affect the molten composition.</p>
+                    </div>
+                    <img src="metadata/welding.png" alt="Welding-Image" class="publication-image">
+                </div>
+            </a>
+        
+            <!-- Third publication -->
+            <a href="https://www.sciencedirect.com/science/article/pii/S2352711023003084" target="_blank" class="publication-link">
+                <div class="publication-card">
+                    <div class="publication-content">
+                        <h3 class="publication-title">Version 2.0 — LaserbeamFoam: Laser ray-tracing and thermally induced state transition simulation toolkit (SoftwareX)</h3>
+                        <p class="publication-authors">Thomas Flint, Joseph D. Robson, Parsa Esmati, Nicolo Grilli, Gowthaman Parivendhan, Philip Cardiff</p>
+                        <p class="publication-abstract">a multi-component version of the solver is included with pair-wise Fickian Diffusion between selected component pairs. This new solver, multiComponentlaserbeamFoam, captures the multi-component nature of mixing between alloys.</p>
+                    </div>
+                    <img src="metadata/laserbeamfoam.png" alt="LaserbeamFoam-Image" class="publication-image">
+                </div>
+            </a>
+        </section>
+
+        <!-- Email Contact Section -->
+        <div class="email-container">
+            <p class="email-text">Contact me at:</p>
+            <a href="mailto:parsa.esmati@gmail.com" class="email-address">parsa.esmati at bristol.ac.uk</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Card hover effects
+            const cards = document.querySelectorAll('.publication-card, .news-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    card.style.boxShadow = '0 8px 16px rgba(74, 158, 255, 0.2)';
+                });
+                
+                card.addEventListener('mouseout', () => {
+                    card.style.boxShadow = 'none';
+                });
+            });
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
